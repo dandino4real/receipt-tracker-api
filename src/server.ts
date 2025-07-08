@@ -27,7 +27,6 @@ console.log("origins", corsOrigins);
 app.use(
   cors({
     origin: corsOrigins,
-    // origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
