@@ -32,6 +32,7 @@ export const AuthController = {
         httpOnly: true,
         secure: true, // Always true for cross-origin in production
         sameSite: "none", // Required for cross-origin cookies
+        domain: ".vercel.app",
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
       });
 
