@@ -24,12 +24,11 @@ app.use(cookieParser());
 
 const corsOrigins = process.env.CORS_ORIGINS
   ? process.env.CORS_ORIGINS.split(",").map((origin) => origin.trim())
-  : ["https://afibie-fx.vercel.app"];
+  : ["https://receipt-tracker-web.vercel.app"];
 
 app.use(
   cors({
-    // origin: corsOrigins,
-    origin:"https://afibie-fx.vercel.app",
+    origin: corsOrigins,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
