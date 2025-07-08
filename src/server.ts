@@ -36,7 +36,7 @@ app.use(cookieParser());
 //   })
 // );
 
-app.options("*", cors()); // Handle preflight
+// app.options("*", cors()); // Handle preflight
 
 app.use(
   cors({
