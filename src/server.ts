@@ -26,7 +26,8 @@ console.log("origins", corsOrigins);
 
 app.use(
   cors({
-    origin: corsOrigins,
+    // origin: corsOrigins,
+    origin: "https://receipt-tracker-web.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
