@@ -18,21 +18,32 @@ app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 
-const corsOrigins = process.env.CORS_ORIGINS
-  ? process.env.CORS_ORIGINS.split(",").map((origin) => origin.trim())
-  : ["https://receipt-tracker-web.vercel.app"];
+// const corsOrigins = process.env.CORS_ORIGINS
+//   ? process.env.CORS_ORIGINS.split(",").map((origin) => origin.trim())
+//   : ["https://receipt-tracker-web.vercel.app"];
 
-console.log("origins", corsOrigins);
+// console.log("origins", corsOrigins);
+
+// app.use(
+//   cors({
+//     // origin: corsOrigins,
+//     origin: "https://receipt-tracker-web.vercel.app",
+//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+//     credentials: true,
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     exposedHeaders: ["Set-Cookie"],
+//     preflightContinue: true,
+//   })
+// );
+
+app.options("*", cors()); // Handle preflight
 
 app.use(
   cors({
-    // origin: corsOrigins,
     origin: "https://receipt-tracker-web.vercel.app",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
-    exposedHeaders: ["Set-Cookie"],
-    preflightContinue: true,
   })
 );
 
